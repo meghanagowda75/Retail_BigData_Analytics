@@ -219,7 +219,7 @@ Apache Pig is used to clean, transform and group retail transaction data.
 
 The cleaned transaction dataset is stored separately from the grouped customer-category summaries.
 
-**Implementation:** [`pig/retail_cleaning.pig`](pig/retail_cleaning.pig)
+**Implementation:** [pig/retail_cleaning.pig](pig/retail_cleaning.pig)
 
 ## 🐝 Apache Hive — Analytical Queries
 
@@ -253,11 +253,11 @@ Apache Hive provides a SQL-like interface for querying processed retail data.
 
 **SQL Implementation:**
 
-- [`create_database.sql`](hive/create_database.sql)
-- [`create_table.sql`](hive/create_table.sql)
-- [`analysis_queries.sql`](hive/analysis_queries.sql)
+- [create_database.sql](hive/create_database.sql)
+- [create_table.sql](hive/create_table.sql)
+- [analysis_queries.sql](hive/analysis_queries.sql)
 
-**Export and Validation:** [`export_results.py`](hive/export_results.py)
+**Export and Validation:** [export_results.py](hive/export_results.py)
 
 ## 📈 Power BI Dashboard
 
@@ -266,7 +266,7 @@ The Power BI report contains four interactive dashboard pages designed to presen
 ### 1. Sales Overview
 
 <p align="center">
-  <img src="report/screenshots/01_sales_overview.jpeg" alt="Sales Overview Dashboard" width="100%" />
+  <img src="./report/screenshots/01_sales_overview.jpeg" alt="Sales Overview Dashboard" width="100%" />
 </p>
 
 - Total revenue
@@ -278,7 +278,7 @@ The Power BI report contains four interactive dashboard pages designed to presen
 ### 2. Product Analysis
 
 <p align="center">
-  <img src="report/screenshots/02_product_analysis.jpeg" alt="Product Analysis Dashboard" width="100%" />
+  <img src="./report/screenshots/02_product_analysis.jpeg" alt="Product Analysis Dashboard" width="100%" />
 </p>
 
 - Category-wise revenue
@@ -289,7 +289,7 @@ The Power BI report contains four interactive dashboard pages designed to presen
 ### 3. Customer Purchase Analysis
 
 <p align="center">
-  <img src="report/screenshots/03_customer_purchase_analysis.jpeg" alt="Customer Purchase Analysis Dashboard" width="100%" />
+  <img src="./report/screenshots/03_customer_purchase_analysis.jpeg" alt="Customer Purchase Analysis Dashboard" width="100%" />
 </p>
 
 - Customer-wise revenue
@@ -300,7 +300,7 @@ The Power BI report contains four interactive dashboard pages designed to presen
 ### 4. Payment and Regional Analysis
 
 <p align="center">
-  <img src="report/screenshots/04_payment_and_regional_analysis.jpeg" alt="Payment and Regional Analysis Dashboard" width="100%" />
+  <img src="./report/screenshots/04_payment_and_regional_analysis.jpeg" alt="Payment and Regional Analysis Dashboard" width="100%" />
 </p>
 
 - Payment method distribution
@@ -310,7 +310,7 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 The dashboard combines KPI cards, charts and slicers to support interactive exploration and comparison.
 
-**Power BI Report:** [`Retail_Sales_Dashboard.pbix`](powerbi/Retail_Sales_Dashboard.pbix)
+**Power BI Report:** [Retail_Sales_Dashboard.pbix](powerbi/Retail_Sales_Dashboard.pbix)
 
 ## 📌 Project Results
 
