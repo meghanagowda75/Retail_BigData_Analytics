@@ -1,18 +1,65 @@
-# Retail Sales and Customer Purchase Pattern Analysis Using Apache Pig, Apache Hive, and Microsoft Power BI
+**# 🛍️ Retail Sales and Customer Purchase Pattern Analysis
+### Big Data Analytics using Apache Hadoop, Apache Pig, Apache Hive & Microsoft Power BI
 
-## 1. Project Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Big%20Data-Analytics-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Apache-Hadoop-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Apache-Pig-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Apache-Hive-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-gold?style=for-the-badge" />
+</p>
 
-This project analyzes retail transaction data using Big Data technologies to identify sales trends, customer purchasing behavior, product performance, payment preferences, and regional sales patterns.
+<p align="center">
+  <b>Transforming retail transactions into meaningful business insights through Big Data technologies.</b>
+</p>
 
-Apache Pig is used to clean and transform the transaction data. Apache Hive is used to perform analytical queries on the processed data. Microsoft Power BI is used to visualize the analytical results through interactive dashboards.
+---
 
-## 2. Problem Statement
+## 📌 Project Overview
 
-Retail businesses generate large amounts of transaction data containing information about customers, products, sales, discounts, regions, and payment methods. Analyzing this data manually can be time-consuming and makes it difficult to identify meaningful business patterns.
+Retail businesses generate large volumes of transactional data every day. Extracting useful information from this data helps organizations understand customer behaviour, product demand, revenue trends and regional performance.
 
-This project develops a data-processing and analytics workflow using Apache Hadoop, Apache Pig, Apache Hive, and Power BI to transform raw retail transactions into useful business insights.
+**Retail Big Data Analytics** is a data-processing and visualization project that integrates Apache Hadoop, HDFS, Apache Pig, Apache Hive and Microsoft Power BI to analyze retail transactions.
 
-## 3. Objectives
+The project follows a structured workflow:
+
+- **Hadoop & HDFS:** Distributed storage of retail transaction data.
+- **Apache Pig:** Data cleaning, transformation and grouping.
+- **Apache Hive:** Analytical querying and aggregation.
+- **Microsoft Power BI:** Interactive dashboards and business insights.
+
+## 📑 Table of Contents
+
+| No. | Section |
+|---|---|
+| 1 | [Project Overview](#-project-overview) |
+| 2 | [Problem Statement](#-problem-statement) |
+| 3 | [Objectives](#-project-objectives) |
+| 4 | [Technologies Used](#-technologies-used) |
+| 5 | [Dataset Description](#-dataset-description) |
+| 6 | [System Architecture](#-system-architecture) |
+| 7 | [Project Workflow](#-project-workflow) |
+| 8 | [Apache Pig Processing](#-apache-pig--data-processing) |
+| 9 | [Apache Hive Analysis](#-apache-hive--analytical-queries) |
+| 10 | [Power BI Dashboard](#-power-bi-dashboard) |
+| 11 | [Project Results](#-project-results) |
+| 12 | [Advantages](#-advantages) |
+| 13 | [Future Enhancements](#-future-enhancements) |
+| 14 | [Conclusion](#-conclusion) |
+| 15 | [Project Structure](#-project-folder-structure) |
+| 16 | [Execution Guide](#-execution-and-verification) |
+
+---
+
+## 🎯 Problem Statement
+
+Retail transaction datasets contain information about customers, products, quantities, discounts, payment methods and geographical regions.
+
+Manually processing and analyzing this information can be time-consuming and makes it difficult to discover meaningful patterns.
+
+This project addresses the problem by developing an integrated Big Data analytics workflow that processes retail transactions and generates useful insights into sales performance, customer purchasing behaviour, product performance and regional trends.
+
+## 🚀 Project Objectives
 
 - Process retail transaction data using Hadoop and HDFS.
 - Clean the dataset and remove duplicate transactions.
@@ -24,142 +71,190 @@ This project develops a data-processing and analytics workflow using Apache Hado
 - Examine payment preferences and regional performance.
 - Develop interactive Power BI dashboards for business analysis.
 
-## 4. Technologies Used
+## 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| Apache Hadoop | Distributed data storage and processing infrastructure |
-| HDFS | Stores the input dataset and processed files |
-| Apache Pig | Data cleaning, transformation and grouping |
-| Pig Latin | Defines the data-processing workflow |
-| Apache Hive | Performs analytical queries on processed data |
-| HiveQL | Queries, aggregates and analyzes retail data |
-| Microsoft Power BI | Creates interactive dashboards and visualizations |
-| CSV | Stores the input dataset and exported results |
-| VS Code | Project development and file management |
+| Apache Hadoop | Distributed storage and processing infrastructure |
+| HDFS | Stores input and processed datasets |
+| Apache Pig | Data cleaning and transformation |
+| Pig Latin | Defines data-processing operations |
+| Apache Hive | Analytical querying and aggregation |
+| HiveQL | SQL-like data analysis |
+| Microsoft Power BI | Interactive data visualization |
+| Python | Automates query-result exports and validation |
+| CSV | Stores input data and analytical outputs |
 | Java | Supports the Hadoop ecosystem |
+| Visual Studio Code | Development and project management |
 
-## 5. Dataset Description
+## 📊 Dataset Description
 
-The project uses a retail transaction dataset in CSV format.
+The project uses a retail transaction dataset in CSV format containing **1,500 transaction records**.
 
-The dataset contains the following fields:
+### Dataset attributes
 
 | Column | Description |
 |---|---|
-| transaction_id | Unique transaction identifier |
-| transaction_date | Date of the transaction |
-| customer_id | Customer identifier |
-| region | Geographic region of the transaction |
-| product_category | Category of the purchased product |
-| product_name | Name of the purchased product |
-| quantity | Quantity purchased |
-| unit_price_inr | Unit price in Indian rupees |
-| discount_pct | Discount percentage |
-| sales_amount_inr | Sales amount in Indian rupees |
-| payment_method | Payment method used |
+| `transaction_id` | Unique transaction identifier |
+| `transaction_date` | Date of the transaction |
+| `customer_id` | Customer identifier |
+| `region` | Geographical region |
+| `product_category` | Purchased product category |
+| `product_name` | Product name |
+| `quantity` | Quantity purchased |
+| `unit_price_inr` | Unit price in Indian rupees |
+| `discount_pct` | Discount percentage |
+| `sales_amount_inr` | Transaction sales amount |
+| `payment_method` | Payment method used |
 
-The dataset is inspected before processing to verify its schema, data types, missing values, duplicates, and numeric ranges.
+The dataset is inspected to examine its schema, data types, missing values, duplicates and numeric ranges before processing.
 
-## 6. System Architecture
+## 🏗️ System Architecture
 
-The project follows a sequential data-processing and analytics architecture.
+The project follows a sequential Big Data processing and analytics architecture.
 
-Retail Transaction Dataset (CSV)  
-↓  
-Hadoop Distributed File System (HDFS)  
-↓  
-Apache Pig — Data Cleaning and Transformation  
-↓  
-Cleaned Transactions and Grouped Summaries  
-↓  
-Apache Hive — Analytical Queries  
-↓  
-Query Result Files  
-↓  
-Microsoft Power BI — Interactive Dashboards  
-↓  
-Business Insights
+```mermaid
+flowchart TD
+    A["🗂️ Retail Transaction Dataset<br/>CSV"] --> B["Apache Hadoop<br/>HDFS Storage"]
+    B --> C["Apache Pig<br/>Data Cleaning & Transformation"]
+    C --> D["Cleaned Transactions<br/>Grouped Summaries"]
+    D --> E["Apache Hive<br/>Analytical Queries"]
+    E --> F["Query Result CSV Files"]
+    F --> G["Microsoft Power BI<br/>Interactive Dashboards"]
+    G --> H["Business Insights<br/>Sales & Customer Analysis"]
 
-## 7. Project Workflow
+    classDef source fill:#dbeafe,stroke:#1d4ed8,color:#172554
+    classDef processing fill:#dcfce7,stroke:#15803d,color:#14532d
+    classDef analytics fill:#fef3c7,stroke:#b45309,color:#78350f
+    classDef output fill:#f3e8ff,stroke:#7e22ce,color:#581c87
 
-### Step 1: Dataset Preparation
+    class A source
+    class B,C,D processing
+    class E,F analytics
+    class G,H output
+```
 
-The retail transaction dataset is inspected and prepared for processing. Its column structure, data types, missing values, and duplicate records are examined.
+## 🔄 Project Workflow
 
-### Step 2: HDFS Storage
+<details>
+<summary><b>Step 1 — Dataset Preparation</b></summary>
 
-The input CSV dataset is uploaded to HDFS. Separate directories are maintained for input data, cleaned data, grouped data, and analytical outputs.
+The retail transaction CSV dataset is inspected and prepared for processing. Its column structure, data types, missing values and duplicate records are examined.
 
-### Step 3: Apache Pig Processing
+</details>
+
+<details>
+<summary><b>Step 2 — HDFS Storage</b></summary>
+
+The input dataset is uploaded to Hadoop Distributed File System (HDFS). Separate directories are maintained for input, cleaned data, grouped data and analytical outputs.
+
+</details>
+
+<details>
+<summary><b>Step 3 — Apache Pig Processing</b></summary>
 
 Apache Pig processes the input dataset using Pig Latin.
 
-The processing steps include:
+The processing operations include:
 
 1. Loading the CSV dataset.
 2. Handling the header row.
 3. Converting fields to appropriate data types.
 4. Removing duplicate transactions according to the selected deduplication rule.
-5. Filtering invalid or non-positive sales amounts according to the project's filtering rule.
+5. Filtering invalid or non-positive sales amounts.
 6. Grouping transactions by customer and product category.
-7. Calculating transaction counts, total quantities, and total sales.
-8. Storing the cleaned data and grouped summaries in HDFS.
+7. Calculating transaction counts, total quantities and total sales.
+8. Storing cleaned transactions and grouped summaries in HDFS.
 
-### Step 4: Apache Hive Analysis
+</details>
 
-Apache Hive creates a database and an external table over the cleaned transaction data.
+<details>
+<summary><b>Step 4 — Apache Hive Analysis</b></summary>
 
-HiveQL queries are used to analyze revenue, monthly sales, customer purchase values, best-selling products, payment methods, discounts, and regional performance.
+Apache Hive creates the `retail_db` database and the `retail_transactions` external table over the cleaned transaction data.
 
-### Step 5: Power BI Visualization
+HiveQL queries analyze revenue, monthly sales, customer purchase values, best-selling products, payment methods, discounts and regional performance.
 
-The verified transaction data or exported Hive query results are imported into Power BI.
+</details>
 
-The report contains four dashboard pages covering sales overview, product analysis, customer purchase analysis, and payment and regional analysis.
+<details>
+<summary><b>Step 5 — Power BI Visualization</b></summary>
 
-### Step 6: Validation
+The verified transaction data and exported Hive query results are imported into Microsoft Power BI.
 
-The output files, Hive tables, analytical query results, and Power BI figures are checked for consistency. Screenshots are collected as evidence of successful execution.
+Four dashboard pages present sales, product, customer, payment and regional insights.
 
-## 8. Apache Pig — Data Processing
+</details>
 
-Apache Pig is used to process and transform the retail dataset.
+<details>
+<summary><b>Step 6 — Validation</b></summary>
 
-The main operations include:
+The output files, Hive tables, analytical query results and Power BI figures are checked for consistency. Dashboard screenshots are collected as execution evidence.
 
-- **LOAD:** Reads the transaction dataset.
-- **FILTER:** Selects records satisfying the sales filtering condition.
-- **DISTINCT:** Removes identical complete records.
-- **FOREACH ... GENERATE:** Transforms and selects fields.
-- **GROUP:** Groups transactions by customer and product category.
-- **COUNT:** Calculates the number of records in a group.
-- **SUM:** Calculates total sales and quantity.
-- **STORE:** Saves the processed results to HDFS.
+</details>
 
-The cleaned transaction data is stored separately from the grouped customer-category summaries.
+## 🐘 Apache Pig — Data Processing
 
-## 9. Apache Hive — Analytical Queries
+Apache Pig is used to clean, transform and group retail transaction data.
 
-Apache Hive provides a SQL-like interface for querying the processed data.
+| Pig Operation | Function |
+|---|---|
+| `LOAD` | Reads the transaction dataset |
+| `FILTER` | Selects records satisfying the filtering condition |
+| `DISTINCT` | Removes identical complete records |
+| `FOREACH ... GENERATE` | Transforms and selects fields |
+| `GROUP` | Groups transactions by customer and product category |
+| `COUNT` | Calculates record counts |
+| `SUM` | Calculates total sales and quantity |
+| `STORE` | Saves processed data to HDFS |
 
-The database is named `retail_db`, and the primary transaction table is named `retail_transactions`.
+The cleaned transaction dataset is stored separately from the grouped customer-category summaries.
 
-The five required analytical queries are:
+**Implementation:** [`pig/retail_cleaning.pig`](pig/retail_cleaning.pig)
 
-1. **Total Revenue by Product Category:** Identifies categories contributing the highest revenue.
-2. **Monthly Sales Analysis:** Examines monthly revenue and transaction trends.
-3. **Top 10 Customers:** Ranks customers according to total purchase value.
-4. **Best-Selling Products:** Identifies products with the highest total quantity sold.
-5. **Payment Method Analysis:** Compares transaction counts and revenue across payment methods.
+## 🐝 Apache Hive — Analytical Queries
 
-Additional analyses include overall sales KPIs, discount analysis, customer purchase frequency, repeat customers, category-wise quantity sold, and region-wise revenue.
+Apache Hive provides a SQL-like interface for querying processed retail data.
 
-## 10. Power BI Dashboard
+**Database:** `retail_db`  
+**Primary table:** `retail_transactions`
 
-The Power BI report consists of four pages.
+### Key analytical queries
 
-### Page 1: Sales Overview
+| Analysis | Objective |
+|---|---|
+| Revenue by Product Category | Identify the highest-revenue categories |
+| Monthly Sales Analysis | Examine monthly revenue trends |
+| Top 10 Customers | Rank customers by purchase value |
+| Best-Selling Products | Identify products with the highest quantity sold |
+| Payment Method Analysis | Compare payment transaction counts and revenue |
+
+### Additional analyses
+
+- Overall sales KPIs
+- Discount analysis
+- Customer purchase frequency
+- Repeat customer analysis
+- Category-wise quantity sold
+- Region-wise revenue
+- Regional distribution
+- Top products by revenue
+
+**SQL implementation:**
+
+- [`create_database.sql`](hive/create_database.sql)
+- [`create_table.sql`](hive/create_table.sql)
+- [`analysis_queries.sql`](hive/analysis_queries.sql)
+
+**Export and validation:** [`export_results.py`](hive/export_results.py)
+
+## 📈 Power BI Dashboard
+
+The Power BI report contains four interactive dashboard pages designed to present retail business performance.
+
+### 1. Sales Overview
+
+![Sales Overview](report/screenshots/01_sales_overview.png)
 
 - Total revenue
 - Total transactions
@@ -167,55 +262,84 @@ The Power BI report consists of four pages.
 - Monthly sales trend
 - Transaction volume
 
-### Page 2: Product Analysis
+### 2. Product Analysis
+
+![Product Analysis](report/screenshots/02_product_analysis.png)
 
 - Category-wise revenue
 - Top-selling products
 - Quantity sold
 - Discount analysis
 
-### Page 3: Customer Purchase Analysis
+### 3. Customer Purchase Analysis
+
+![Customer Purchase Analysis](report/screenshots/03_customer_purchase_analysis.png)
 
 - Customer-wise revenue
 - Purchase frequency
 - Repeat customers
 - Regional distribution
 
-### Page 4: Payment and Regional Analysis
+### 4. Payment and Regional Analysis
+
+![Payment and Regional Analysis](report/screenshots/04_payment_and_regional_analysis.png)
 
 - Payment method distribution
 - Revenue by payment method
 - Region-wise revenue
 - Region-wise transaction volume
 
-Charts, KPI cards, and slicers enable users to explore the data and compare business performance.
+The dashboard combines KPI cards, charts and slicers to support interactive exploration and comparison.
 
-## 11. Project Results
+**Power BI report:** [`Retail_Sales_Dashboard.pbix`](powerbi/Retail_Sales_Dashboard.pbix)
 
-Record the actual results after executing the complete workflow.
+## 📌 Project Results
 
-- Number of input transactions: [Enter verified count]
-- Number of cleaned transactions: [Enter verified count]
-- Number of duplicate records removed: [Enter verified count]
-- Number of records excluded by the sales filter: [Enter verified count]
-- Highest-revenue product category: [Enter actual result]
-- Top-selling product: [Enter actual result]
-- Highest-value customer: [Enter actual result]
-- Most-used payment method: [Enter actual result]
-- Highest-revenue region: [Enter actual result]
+### Verified dashboard metrics
 
-The final findings are based on the verified output of Apache Pig, Apache Hive, and Power BI.
+| Metric | Result |
+|---|---:|
+| Total Revenue | ₹18,83,001.20 |
+| Total Transactions | 1,500 |
+| Total Customers | 200 |
+| Quantity Sold | 2,573 |
+| Average Transaction Value | ₹1,255.33 |
+| Average Discount | 5.46% |
+| Highest Monthly Sales | ₹1,85,792.10 |
+| Highest Sales Month | October 2025 |
 
-## 12. Advantages
+### Revenue by product category
+
+| Product Category | Revenue |
+|---|---:|
+| Electronics | ₹5,58,716.60 |
+| Home & Kitchen | ₹4,78,227.90 |
+| Clothing | ₹4,68,489.05 |
+| Beauty | ₹2,14,562.85 |
+| Grocery | ₹1,63,004.80 |
+
+### Revenue by region
+
+| Region | Revenue |
+|---|---:|
+| West | ₹4,14,297.05 |
+| South | ₹4,09,256.90 |
+| North | ₹3,74,014.65 |
+| East | ₹3,60,850.90 |
+| Central | ₹3,24,581.70 |
+
+The results demonstrate how the processed retail data can be used to understand sales performance, product demand and regional contributions.
+
+## ⭐ Advantages
 
 - Organizes the retail data-processing workflow.
 - Reduces manual data cleaning and aggregation.
 - Supports analysis of customer and product performance.
-- Enables monthly, regional, and payment-related comparisons.
+- Enables monthly, regional and payment-related comparisons.
 - Provides visual summaries for business decision-making.
-- Demonstrates the integration of Hadoop, Pig, Hive, and Power BI.
+- Demonstrates the integration of Hadoop, Pig, Hive and Power BI.
 
-## 13. Future Enhancements
+## 🔮 Future Enhancements
 
 - Process larger retail datasets.
 - Automate scheduled data ingestion and reporting.
@@ -224,47 +348,92 @@ The final findings are based on the verified output of Apache Pig, Apache Hive, 
 - Analyze product recommendations and customer buying patterns.
 - Integrate automated alerts for unusual sales changes.
 
-## 14. Conclusion
+## 🏁 Conclusion
 
-This project demonstrates a Big Data analytics workflow for retail transaction analysis. Apache Hadoop and HDFS provide the storage infrastructure, Apache Pig performs data cleaning and transformation, and Apache Hive enables analytical querying. Microsoft Power BI presents the resulting information through interactive dashboards.
+This project demonstrates an integrated Big Data analytics workflow for retail transaction analysis.
 
-The integrated workflow helps transform raw retail transactions into interpretable insights about sales performance, product demand, customer behavior, payment preferences, and regional trends.
+Apache Hadoop and HDFS provide the storage infrastructure, Apache Pig performs data cleaning and transformation, and Apache Hive enables analytical querying. Microsoft Power BI presents the resulting information through interactive dashboards.
 
-## 15. Project Folder Structure
+The integrated workflow transforms raw retail transactions into meaningful insights about sales performance, product demand, customer behaviour, payment preferences and regional trends.
 
+## 📁 Project Folder Structure
+
+```text
 Retail_BigData_Analytics/
+│
+├── dataset/
+│   └── retail_transactions.csv
+│
+├── pig/
+│   └── retail_cleaning.pig
+│
+├── hive/
+│   ├── create_database.sql
+│   ├── create_table.sql
+│   ├── analysis_queries.sql
+│   ├── export_results.py
+│   └── output/
+│       ├── best_selling_products.csv
+│       ├── category_sales.csv
+│       ├── customer_purchase_frequency.csv
+│       ├── discount_analysis.csv
+│       ├── monthly_sales.csv
+│       ├── overall_sales_kpis.csv
+│       ├── payment_method_analysis.csv
+│       ├── payment_preferences.csv
+│       ├── quantity_sold_by_product.csv
+│       ├── region_wise_revenue.csv
+│       ├── regional_distribution.csv
+│       ├── repeat_customers.csv
+│       ├── revenue_by_category.csv
+│       ├── top_10_customers.csv
+│       └── top_products_by_revenue.csv
+│
+├── powerbi/
+│   ├── Measures.dax
+│   ├── RetailTransactions.pq
+│   ├── Retail_Sales_Dashboard.pbix
+│   └── retail_transactions.csv
+│
+├── report/
+│   ├── Retail_Sales_Dashboard.pdf
+│   └── screenshots/
+│       ├── 01_sales_overview.png
+│       ├── 02_product_analysis.png
+│       ├── 03_customer_purchase_analysis.png
+│       └── 04_payment_and_regional_analysis.png
+│
+├── .gitignore
+└── README.md
+```
 
-- dataset/
-  - retail_transactions.csv
-- pig/
-  - retail_cleaning.pig
-  - output/
-- hive/
-  - create_database.sql
-  - create_table.sql
-  - analysis_queries.sql
-  - output/
-- powerbi/
-  - Retail_Sales_Dashboard.pbix
-- report/
-  - project_report.docx
-  - architecture.png
-  - screenshots/
-- README.md
+## ▶️ Execution and Verification
 
-## 16. Execution and Verification
+Follow the steps below to execute the complete project.
 
-The project is executed in the following order:
-
-1. Verify the input dataset.
+1. Verify the input retail transaction dataset.
 2. Upload the dataset to HDFS.
 3. Execute the Apache Pig processing script.
 4. Verify cleaned and grouped HDFS outputs.
 5. Create the Hive database and transaction table.
 6. Execute the required Hive analytical queries.
-7. Export and verify query results.
+7. Export and validate the 15 query-result CSV files.
 8. Import the required data into Power BI.
 9. Complete and validate all four dashboard pages.
-10. Save screenshots and document the actual findings.
+10. Save dashboard screenshots and document the verified findings.
 
-**Note:** Replace all placeholders in the results section with actual verified outputs. Do not report unmeasured results or claim successful execution before testing the relevant stage.
+---
+
+<p align="center">
+  <b>Retail Big Data Analytics</b><br/>
+  Turning Retail Data into Business Insights
+</p>
+
+<p align="center">
+  ⭐ If you find this project interesting, consider giving the repository a star!
+</p>
+
+<p align="center">
+  <a href="https://github.com/meghanagowda75/Retail_BigData_Analytics">View Repository on GitHub</a>
+</p>
+**
