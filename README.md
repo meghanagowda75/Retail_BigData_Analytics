@@ -1,4 +1,4 @@
-**# 🛍️ Retail Sales and Customer Purchase Pattern Analysis
+# 🛍️ Retail Sales and Customer Purchase Pattern Analysis
 ### Big Data Analytics using Apache Hadoop, Apache Pig, Apache Hive & Microsoft Power BI
 
 <p align="center">
@@ -436,4 +436,3 @@ Follow the steps below to execute the complete project.
 <p align="center">
   <a href="https://github.com/meghanagowda75/Retail_BigData_Analytics">View Repository on GitHub</a>
 </p>
-**
