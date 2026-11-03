@@ -1,4 +1,5 @@
 # 🛍️ Retail Sales and Customer Purchase Pattern Analysis
+
 ### Big Data Analytics using Apache Hadoop, Apache Pig, Apache Hive & Microsoft Power BI
 
 <p align="center">
@@ -11,6 +12,14 @@
 
 <p align="center">
   <b>Transforming retail transactions into meaningful business insights through Big Data technologies.</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/meghanagowda75/Retail_BigData_Analytics">
+    <img src="https://img.shields.io/badge/GitHub-View%20Repository-181717?style=flat&logo=github" />
+  </a>
+  <img src="https://img.shields.io/badge/Records-1500-success?style=flat" />
+  <img src="https://img.shields.io/badge/Dashboards-4-orange?style=flat" />
 </p>
 
 ---
@@ -31,23 +40,23 @@ The project follows a structured workflow:
 ## 📑 Table of Contents
 
 | No. | Section |
-|---|---|
-| 1 | [Project Overview](#-project-overview) |
-| 2 | [Problem Statement](#-problem-statement) |
-| 3 | [Objectives](#-project-objectives) |
-| 4 | [Technologies Used](#-technologies-used) |
-| 5 | [Dataset Description](#-dataset-description) |
-| 6 | [System Architecture](#-system-architecture) |
-| 7 | [Project Workflow](#-project-workflow) |
-| 8 | [Apache Pig Processing](#-apache-pig--data-processing) |
-| 9 | [Apache Hive Analysis](#-apache-hive--analytical-queries) |
+|:---:|---|
+| 01 | [Project Overview](#-project-overview) |
+| 02 | [Problem Statement](#-problem-statement) |
+| 03 | [Project Objectives](#-project-objectives) |
+| 04 | [Technologies Used](#-technologies-used) |
+| 05 | [Dataset Description](#-dataset-description) |
+| 06 | [System Architecture](#️-system-architecture) |
+| 07 | [Project Workflow](#-project-workflow) |
+| 08 | [Apache Pig Processing](#-apache-pig--data-processing) |
+| 09 | [Apache Hive Analysis](#-apache-hive--analytical-queries) |
 | 10 | [Power BI Dashboard](#-power-bi-dashboard) |
 | 11 | [Project Results](#-project-results) |
 | 12 | [Advantages](#-advantages) |
 | 13 | [Future Enhancements](#-future-enhancements) |
 | 14 | [Conclusion](#-conclusion) |
-| 15 | [Project Structure](#-project-folder-structure) |
-| 16 | [Execution Guide](#-execution-and-verification) |
+| 15 | [Project Folder Structure](#-project-folder-structure) |
+| 16 | [Execution Guide](#️-execution-and-verification) |
 
 ---
 
@@ -91,7 +100,7 @@ This project addresses the problem by developing an integrated Big Data analytic
 
 The project uses a retail transaction dataset in CSV format containing **1,500 transaction records**.
 
-### Dataset attributes
+### Dataset Attributes
 
 | Column | Description |
 |---|---|
@@ -115,13 +124,13 @@ The project follows a sequential Big Data processing and analytics architecture.
 
 ```mermaid
 flowchart TD
-    A["🗂️ Retail Transaction Dataset<br/>CSV"] --> B["Apache Hadoop<br/>HDFS Storage"]
-    B --> C["Apache Pig<br/>Data Cleaning & Transformation"]
+    A["Retail Transaction Dataset<br/>CSV"] --> B["Apache Hadoop<br/>HDFS Storage"]
+    B --> C["Apache Pig<br/>Data Cleaning and Transformation"]
     C --> D["Cleaned Transactions<br/>Grouped Summaries"]
     D --> E["Apache Hive<br/>Analytical Queries"]
     E --> F["Query Result CSV Files"]
     F --> G["Microsoft Power BI<br/>Interactive Dashboards"]
-    G --> H["Business Insights<br/>Sales & Customer Analysis"]
+    G --> H["Business Insights<br/>Sales and Customer Analysis"]
 
     classDef source fill:#dbeafe,stroke:#1d4ed8,color:#172554
     classDef processing fill:#dcfce7,stroke:#15803d,color:#14532d
@@ -216,10 +225,12 @@ The cleaned transaction dataset is stored separately from the grouped customer-c
 
 Apache Hive provides a SQL-like interface for querying processed retail data.
 
-**Database:** `retail_db`  
-**Primary table:** `retail_transactions`
+| Configuration | Name |
+|---|---|
+| Database | `retail_db` |
+| Primary table | `retail_transactions` |
 
-### Key analytical queries
+### Key Analytical Queries
 
 | Analysis | Objective |
 |---|---|
@@ -229,7 +240,7 @@ Apache Hive provides a SQL-like interface for querying processed retail data.
 | Best-Selling Products | Identify products with the highest quantity sold |
 | Payment Method Analysis | Compare payment transaction counts and revenue |
 
-### Additional analyses
+### Additional Analyses
 
 - Overall sales KPIs
 - Discount analysis
@@ -240,13 +251,13 @@ Apache Hive provides a SQL-like interface for querying processed retail data.
 - Regional distribution
 - Top products by revenue
 
-**SQL implementation:**
+**SQL Implementation:**
 
 - [`create_database.sql`](hive/create_database.sql)
 - [`create_table.sql`](hive/create_table.sql)
 - [`analysis_queries.sql`](hive/analysis_queries.sql)
 
-**Export and validation:** [`export_results.py`](hive/export_results.py)
+**Export and Validation:** [`export_results.py`](hive/export_results.py)
 
 ## 📈 Power BI Dashboard
 
@@ -254,7 +265,9 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 ### 1. Sales Overview
 
-![Sales Overview](report/screenshots/01_sales_overview.png)
+<p align="center">
+  <img src="report/screenshots/01_sales_overview.jpeg" alt="Sales Overview Dashboard" width="100%" />
+</p>
 
 - Total revenue
 - Total transactions
@@ -264,7 +277,9 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 ### 2. Product Analysis
 
-![Product Analysis](report/screenshots/02_product_analysis.png)
+<p align="center">
+  <img src="report/screenshots/02_product_analysis.jpeg" alt="Product Analysis Dashboard" width="100%" />
+</p>
 
 - Category-wise revenue
 - Top-selling products
@@ -273,7 +288,9 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 ### 3. Customer Purchase Analysis
 
-![Customer Purchase Analysis](report/screenshots/03_customer_purchase_analysis.png)
+<p align="center">
+  <img src="report/screenshots/03_customer_purchase_analysis.jpeg" alt="Customer Purchase Analysis Dashboard" width="100%" />
+</p>
 
 - Customer-wise revenue
 - Purchase frequency
@@ -282,7 +299,9 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 ### 4. Payment and Regional Analysis
 
-![Payment and Regional Analysis](report/screenshots/04_payment_and_regional_analysis.png)
+<p align="center">
+  <img src="report/screenshots/04_payment_and_regional_analysis.jpeg" alt="Payment and Regional Analysis Dashboard" width="100%" />
+</p>
 
 - Payment method distribution
 - Revenue by payment method
@@ -291,11 +310,11 @@ The Power BI report contains four interactive dashboard pages designed to presen
 
 The dashboard combines KPI cards, charts and slicers to support interactive exploration and comparison.
 
-**Power BI report:** [`Retail_Sales_Dashboard.pbix`](powerbi/Retail_Sales_Dashboard.pbix)
+**Power BI Report:** [`Retail_Sales_Dashboard.pbix`](powerbi/Retail_Sales_Dashboard.pbix)
 
 ## 📌 Project Results
 
-### Verified dashboard metrics
+### Verified Dashboard Metrics
 
 | Metric | Result |
 |---|---:|
@@ -308,7 +327,7 @@ The dashboard combines KPI cards, charts and slicers to support interactive expl
 | Highest Monthly Sales | ₹1,85,792.10 |
 | Highest Sales Month | October 2025 |
 
-### Revenue by product category
+### Revenue by Product Category
 
 | Product Category | Revenue |
 |---|---:|
@@ -318,7 +337,7 @@ The dashboard combines KPI cards, charts and slicers to support interactive expl
 | Beauty | ₹2,14,562.85 |
 | Grocery | ₹1,63,004.80 |
 
-### Revenue by region
+### Revenue by Region
 
 | Region | Revenue |
 |---|---:|
@@ -398,10 +417,10 @@ Retail_BigData_Analytics/
 ├── report/
 │   ├── Retail_Sales_Dashboard.pdf
 │   └── screenshots/
-│       ├── 01_sales_overview.png
-│       ├── 02_product_analysis.png
-│       ├── 03_customer_purchase_analysis.png
-│       └── 04_payment_and_regional_analysis.png
+│       ├── 01_sales_overview.jpeg
+│       ├── 02_product_analysis.jpeg
+│       ├── 03_customer_purchase_analysis.jpeg
+│       └── 04_payment_and_regional_analysis.jpeg
 │
 ├── .gitignore
 └── README.md
@@ -434,5 +453,7 @@ Follow the steps below to execute the complete project.
 </p>
 
 <p align="center">
-  <a href="https://github.com/meghanagowda75/Retail_BigData_Analytics">View Repository on GitHub</a>
+  <a href="https://github.com/meghanagowda75/Retail_BigData_Analytics">
+    View Repository on GitHub
+  </a>
 </p>
